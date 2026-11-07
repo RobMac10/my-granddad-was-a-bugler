@@ -1,13 +1,9 @@
 # My Granddad was a Bugler — Harold’s Story
 
-A simple, large-text family story by Robin McKean, with all ten pictures embedded in the supplied Year 3 document, followed by Why we remember and optional Australian War Memorial listening links. Story © Robin McKean 2026.
+An illustrated, blog-style family story, followed by Why we remember and optional Australian War Memorial listening links. Large comfortable type, warm colours, ten images interleaved with the narrative. Story © Robin McKean 2026.
 
-The family narrative has not been independently verified. The supplied pictures include AI-marked illustrations and edited record collages; no archival-photo status is claimed. They are published at the author's explicit request. The source document does not establish their creators or underlying rights. No new imagery was generated and none was taken from the separate generated-image package. Personal names and family details are masked on the two record-style collages. Public image copies are re-encoded without original metadata; original files remain private.
+The family recollection has not been independently verified against service records. Some artwork is AI-generated. Illustrations and edited record collages are not authenticated photographs or original military records. Personal names and family details are masked on the record collages. Image creators and underlying rights have not been established; no public-domain status is claimed.
 
-Document image order: cover; young bugler; enlistment collage; troopship; four trench collages; service collage; memorial bugler. Files assets/document-images/story-01.jpg through story-10.jpg.
+Historical context: Australian War Memorial Origins of Remembrance Day, Flanders poppies and The Last Post. External listening links include Last Post and Reveille; recordings are not of Harold.
 
-Historical context: Australian War Memorial Origins of Remembrance Day, Flanders poppies and The Last Post. Listening links open AWM listening and collection pages; recordings are not of Harold.
-
-Static HTML/CSS, no build step, no accounts, no tracking, no synthesis, no autoplay, no games or timers. teacher/index.html is a short read-together note; worksheet.html is a simple draw-and-remember page. The previous full resource is archived privately, not deleted. Original DOCX and packages remain privately preserved.
-
-Only the given name Harold is used in the current public resource. Previously published Git history is not rewritten.
+Static HTML/CSS. No accounts, tracking, autoplay, synthesis, games or timers. The teacher URL contains short read-together notes; worksheet.html is a simple drawing page. Current public text uses only Harold's given name. Existing Git history is not rewritten.
