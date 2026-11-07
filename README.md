@@ -1,9 +1,11 @@
 # My Granddad was a Bugler — Harold’s Story
 
-An illustrated, blog-style family story, followed by Why we remember and optional Australian War Memorial listening links. Large comfortable type, warm colours, ten images interleaved with the narrative. Story © 2026.
+Large-text illustrated family story with Why we remember and Australian War Memorial listening links. Story © 2026.
 
-The family recollection has not been independently verified against service records. Some artwork is AI-generated. Illustrations and edited record collages are not authenticated photographs or original military records. Personal names and family details are masked on the record collages. Image creators and underlying rights have not been established; no public-domain status is claimed.
+Six narrative sections and ten images. Only the two record collages have visible captions. The family identifies those images as Ancestry records; these are edited collages with decorative additions and Grok watermarks, not independently authenticated records. The original unmasked embedded image bytes are displayed at the author's explicit request. Public narrative uses Harold's given name. Some other artwork is AI-generated.
 
-Historical context: Australian War Memorial Origins of Remembrance Day, Flanders poppies and The Last Post. External listening links include Last Post and Reveille; recordings are not of Harold.
+Ship photograph: HMAT Boonah, about 1920. Wikimedia Commons https://commons.wikimedia.org/wiki/File:HMAT_Boonah.jpg . Photographer not identified. Commons marks the file public domain under PD-Australia and PD-1996. Downloaded from https://upload.wikimedia.org/wikipedia/commons/c/c6/HMAT_Boonah.jpg . It depicts the vessel, not a verified image of Harold's voyage. Other image creators and underlying rights have not been established; no public-domain status is claimed for them.
 
-Static HTML/CSS. No accounts, tracking, autoplay, synthesis, games or timers. The teacher URL contains short read-together notes; worksheet.html is a simple drawing page. Current public text uses only Harold's given name. Existing Git history is not rewritten.
+Historical context: AWM Origins of Remembrance Day, Flanders poppies and The Last Post. The family recollection has not been independently checked against service records.
+
+Static HTML/CSS; no autoplay, tracking, synthesis, games or timers. Short read-together notes and a drawing page remain available. Prior versions remain privately archived; Git history is not rewritten.
