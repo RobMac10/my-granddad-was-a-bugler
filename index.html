@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Granddad was a Bugler – Remembrance Day Story</title>
+<style>
+  :root {
+    --poppy-red: #c41e3a;
+    --gold: #d4af37;
+    --sky: #87ceeb;
+    --grass: #4caf50;
+    --dark: #2c3e50;
+    --light: #fff8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #e0f7fa 0%, #fff3e0 100%);
+    color: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 900px;
+  }
+  h1 {
+    color: var(--poppy-red);
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  .subtitle { font-style: italic; color: #555; margin-top: 5px; }
+  .copyright { font-size: 0.85rem; color: #777; margin-top: 8px; }
+  .story-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .page {
+    display: none;
+    padding: 30px;
+    min-height: 520px;
+    animation: fadeIn 0.5s ease;
+  }
+  .page.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .page img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .page h2 {
+    color: var(--poppy-red);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+  }
+  .page p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+  }
+  button {
+    background: var(--poppy-red);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  button:hover { background: #a01830; transform: translateY(-2px); }
+  button:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+  .play-btn {
+    background: var(--gold);
+    color: #333;
+    font-weight: bold;
+    margin: 15px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .play-btn:hover { background: #c9a227; }
+  .play-btn::before { content: "🎺"; }
+  .page-indicator {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  .poppy-bg {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 2rem;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .memorial {
+    text-align: center;
+    background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+  }
+  .memorial h2 { font-size: 2.2rem; }
+  .lest { font-size: 1.4rem; color: var(--poppy-red); font-weight: bold; margin: 15px 0; }
+  .question {
+    background: #fff3e0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border-left: 5px solid var(--gold);
+  }
+  footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+  }
+  .note { font-size: 0.9rem; color: #888; font-style: italic; margin-top: 10px; }
+  .page { min-height: 380px; border-top: 8px solid var(--gold); }
+  .page h2 { outline-offset: 5px; }
+  .page h2::after { content: ''; display: block; width: 65px; height: 4px; background: var(--gold); margin-top: 12px; }
+  .memorial h2::after { margin-inline: auto; }
+  .sound-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 14px 30px; background: #fff8e4; }
+  .sound-controls button { background: #2c3e50; padding: 10px 18px; }
+  #audioStatus { font: 0.9rem/1.5 system-ui, sans-serif; }
+  .source-note { max-width: 800px; margin: 12px auto; line-height: 1.6; }
+  .note { color: #505050; }
+  .audio-link { color: #8b1529; font-weight: bold; line-height: 1.7; text-underline-offset: 4px; }
+  button:focus-visible, a:focus-visible { outline: 3px solid #175e83; outline-offset: 4px; }
+  @media (max-width: 550px) { body { padding: 12px; } h1 { font-size: 1.8rem; } .page { padding: 22px; } .controls { padding: 12px; gap: 8px; } .controls button { padding: 12px; font-size: 0.9rem; } .page-indicator { text-align: center; } .sound-controls { padding: 12px 20px; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } }
+  @media print { .page { display: block !important; break-after: page; min-height: 0; } .controls, .sound-controls, .play-btn { display: none; } body { background: white; } .story-container { box-shadow: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>My Granddad was a Bugler</h1>
+  <div class="subtitle">The Story of Harold Philip Josias Truasheim</div>
+  <div class="copyright">A Young Readers Story • © Robin McKean 2026</div>
+</header>
+
+<main class="story-container" aria-label="Six-page family story">
+  <!-- Page 1: Cover / Intro -->
+  <div class="page active" id="page1">
+    <h2 tabindex="-1">The Boy from Fernvale</h2>
+    <p>Harold Philip Josias Truasheim was just 18 in 1916 when he signed up for the war. He grew up in Fernvale, Queensland. By the time the war started, he already knew how to work hard.</p>
+    <p>Before the war, Harold worked as a butcher’s boy in Fernvale to help his family. His dad had died when Harold was only eight, and he was a big help for his Mum.</p>
+  </div>
+
+  <!-- Page 2: Butcher boy -->
+  <div class="page" id="page2">
+    <h2 tabindex="-1">Working Hard</h2>
+    <p>He wrapped meat, swept the floor, and learned to use a knife carefully. By the time he was fourteen, he had left school and was already earning his living.</p>
+    <p>Harold walked into a recruiting office in Brisbane and signed up. He had only just turned 18, and he was shorter than many of the other men. The officers looked at him and weren’t sure he would be strong enough for the usual soldier jobs, but they took him anyway.</p>
+  </div>
+
+  <!-- Page 3: Becomes bugler -->
+  <div class="page" id="page3">
+    <h2 tabindex="-1">The Clear Note</h2>
+    <p>He sailed from Brisbane on the troopship HMAT Boonah. The men went first to Egypt, where the 4th Pioneer Battalion was being formed. They trained in the heat and dust.</p>
+    <p>The battalion needed someone to play the bugle. One day in camp an officer asked if anyone could play. Young Harold said he could. The officer handed him a bugle and told him to show what he could do.</p>
+    <p>Harold put it to his lips and blew one clear, steady note. Then he tried a few of the calls. The officer listened and nodded. Harold got the job. He became a bugler for the battalion.</p>
+    <button class="play-btn" onclick="playClearNote()">Hear a Bugle-style Note</button>
+  </div>
+
+  <!-- Page 4: Trenches -->
+  <div class="page" id="page4">
+    <h2 tabindex="-1">In the Trenches</h2>
+    <p>Later the battalion went to France. In winter the trenches were deep with mud. Cold water filled the bottom and the men stood in it for hours. Sometimes snow fell and lay on the frozen mud. The wind was sharp and hands went numb.</p>
+    <p>When they were resting or in a quiet part of the trenches, Harold still sounded the bugle. He played for mealtimes, for the mail, and for the “all clear.” One clear note carried along the trench and told the men what to do next. They listened for it even when their feet were cold and the walls of the trench were high and wet around them. Harold was very brave.</p>
+    <button class="play-btn" onclick="playTrenchCall()">Hear Bugle-style Notes</button>
+  </div>
+
+  <!-- Page 5: Home and later life -->
+  <div class="page" id="page5">
+    <h2 tabindex="-1">Home Again</h2>
+    <p>Harold was wounded in France. He was sent home. He kept the bugle.</p>
+    <p>Years later, at his beach house in Beachmere, Harold would still take out the bugle. He blew one clear note from the balcony so the grandchildren would come running in from the beach.</p>
+    <button class="play-btn" onclick="playClearNote()">Hear a Bugle-style Note</button>
+  </div>
+
+  <!-- Page 6: Memorial / Last Post -->
+  <div class="page memorial" id="page6">
+    <h2 tabindex="-1">We Remember</h2>
+    <p>Today, when someone hears a bugle on Anzac Day or Remembrance Day, someone in the family thinks of the boy from Fernvale.</p>
+    <div class="lest">Lest We Forget</div>
+    <p><a class="audio-link" href="https://www.awm.gov.au/anzacathome/remembering-hub/listen" target="_blank" rel="noopener noreferrer">Listen to the Last Post at the Australian War Memorial ↗</a></p>
+    <p class="note">This opens the Memorial’s listening page in a new tab. The example notes in this story are not the Last Post.</p>
+    <div class="question">
+      <strong>Does your family have a way of remembering someone who served?</strong>
+      <p class="note">Talk about it with someone you love. A story, a photo, a special place, or even a quiet moment of silence can keep a memory alive.</p>
+    </div>
+    <div class="poppy-bg">🌺</div>
+  </div>
+
+  <div class="sound-controls"><button id="stopAudio" type="button" onclick="stopAudio()">Stop sound</button><span id="audioStatus" role="status">Sounds play only when you choose.</span></div>
+  <nav class="controls" aria-label="Story pages">
+    <button id="prevBtn" onclick="changePage(-1)">← Previous</button>
+    <div class="page-indicator" id="indicator" aria-live="polite" aria-atomic="true">Page 1 of 6</div>
+    <button id="nextBtn" onclick="changePage(1)">Next →</button>
+  </nav>
+</main>
+
+<footer>
+  Interactive Remembrance Day story based on the family history of Harold Philip Josias Truasheim.<br>
+  For young readers • © Robin McKean 2026
+  <p class="source-note">Source: Robin McKean’s supplied story, <cite>My Granddad was a Bugler</cite> (2026), adapted for Year 3 readers. Family recollections are presented as supplied, not independently verified military records. No illustrations are included.</p>
+  <p class="source-note">Sound: computer-synthesised bugle-style examples, not historical recordings or authenticated military calls.</p>
+</footer>
+
+<script>
+let currentPage = 1;
+const totalPages = 6;
+
+function updatePage() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + currentPage).classList.add('active');
+  document.getElementById('indicator').textContent = `Page ${currentPage} of ${totalPages}`;
+  document.getElementById('prevBtn').disabled = currentPage === 1;
+  document.getElementById('nextBtn').disabled = currentPage === totalPages;
+}
+
+function changePage(dir) {
+  stopAudio();
+  currentPage += dir;
+  if (currentPage < 1) currentPage = 1;
+  if (currentPage > totalPages) currentPage = totalPages;
+  updatePage();
+  document.querySelector('#page' + currentPage + ' h2').focus();
+}
+
+// User-initiated synthesised examples only: these do not recreate Harold's calls.
+let audioCtx;
+let activeNotes = [];
+function stopAudio() {
+  activeNotes.forEach(osc => { try { osc.stop(); } catch (_) {} });
+  activeNotes = [];
+  document.getElementById('audioStatus').textContent = 'Sound stopped.';
+}
+async function playExample(notes) {
+  stopAudio();
+  const Audio = window.AudioContext || window.webkitAudioContext;
+  if (!Audio) { document.getElementById('audioStatus').textContent = 'Sound is not supported in this browser. You can still read every page.'; return; }
+  try {
+    if (!audioCtx) audioCtx = new Audio();
+    await audioCtx.resume();
+    const start = audioCtx.currentTime + 0.05;
+    notes.forEach(([freq, offset, duration]) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, start + offset);
+      gain.gain.setValueAtTime(0, start + offset);
+      gain.gain.linearRampToValueAtTime(0.15, start + offset + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + offset + duration);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      activeNotes.push(osc);
+      osc.onended = () => { osc.disconnect(); gain.disconnect(); activeNotes = activeNotes.filter(n => n !== osc); if (!activeNotes.length) document.getElementById('audioStatus').textContent = 'Sound finished.'; };
+      osc.start(start + offset); osc.stop(start + offset + duration);
+    });
+    document.getElementById('audioStatus').textContent = 'Playing synthesised bugle-style notes — not a historical recording.';
+  } catch (_) { document.getElementById('audioStatus').textContent = 'Sound could not start. Try the sound button again.'; }
+}
+function playClearNote() { return playExample([[466.16, 0, 1.2]]); }
+function playTrenchCall() { return playExample([349.23, 466.16, 587.33, 466.16, 349.23].map((f, i) => [f, i * 0.45, 0.4])); }
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+  if (e.key === 'ArrowRight') { e.preventDefault(); changePage(1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); changePage(-1); }
+});
+
+updatePage();
+</script>
+</body>
+</html>
