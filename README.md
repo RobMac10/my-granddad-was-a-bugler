@@ -2,7 +2,7 @@
 
 Large-text illustrated family story with Why we remember and Australian War Memorial listening links. Story © 2026.
 
-Six narrative sections and ten images. Only the two record collages have visible captions. The family identifies those images as Ancestry records; these are edited collages with decorative additions and Grok watermarks, not independently authenticated records. The original unmasked embedded image bytes are displayed at the author's explicit request. Public narrative uses Harold's given name. Some other artwork is AI-generated.
+Six narrative sections and eight displayed images. Only the two records have visible captions. The family identifies them as Ancestry records. Both record images display the exact clean scan bytes selected by the author, without added decorations or masks; the service-record image retains its original screenshot navigation text. Public narrative uses Harold's given name. Some other artwork is AI-generated. The records have not been independently verified here.
 
 Ship photograph: HMAT Boonah, about 1920. Wikimedia Commons https://commons.wikimedia.org/wiki/File:HMAT_Boonah.jpg . Photographer not identified. Commons marks the file public domain under PD-Australia and PD-1996. Downloaded from https://upload.wikimedia.org/wikipedia/commons/c/c6/HMAT_Boonah.jpg . It depicts the vessel, not a verified image of Harold's voyage. Other image creators and underlying rights have not been established; no public-domain status is claimed for them.
 
