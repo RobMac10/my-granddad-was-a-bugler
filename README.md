@@ -8,6 +8,6 @@ Ship photograph: HMAT Boonah, about 1920. Wikimedia Commons https://commons.wiki
 
 Historical context: AWM Origins of Remembrance Day, Flanders poppies and The Last Post. The family recollection has not been independently checked against service records.
 
-Static HTML/CSS; no autoplay, tracking, synthesis, games or timers. Short read-together notes and a drawing page remain available. Prior versions remain privately archived; Git history is not rewritten.
+Static HTML/CSS; no autoplay, tracking, synthesis, games or timers. Read-together notes and the drawing worksheet were removed from the site and archived locally on 11 November 2026. Prior versions remain privately archived; Git history is not rewritten.
 
-Optional trench exploration links to the National WWI Museum and Memorial's pre-renovation narrated immersive tour on Google Arts & Culture: https://artsandculture.google.com/story/MwXR5svcf515Iw . Museum educator source: https://www.theworldwar.org/learn/educator-resource/immersive-tour-trenches-world-war-i . Adult preview recommended. No embedded tour or autoplay. Three original decorative inline SVG poppy diagrams appear by the title, Why we remember and the final remembrance line; they are not institutional logos.
+Three original decorative inline SVG poppy diagrams appear by the title, Why we remember and the final remembrance line; they are not institutional logos.
